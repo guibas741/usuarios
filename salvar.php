@@ -10,7 +10,12 @@
     if($link) {
         $query = mysqli_query($link, "insert into usuarios(nome, sobrenome, email, login, senha) values('$nome', '$sobrenome', '$email', '$login', '$senha');");
         if($query) {
-            header("Location: listaUsuarios.php");
+            ?>
+            <script> 
+                alert('Usuário adicionado com sucesso!'); 
+                window.location.replace("listaUsuarios.php");
+            </script>
+           <?php
         } else {
             die("ERRO: ".mysqli_error($link));
         }

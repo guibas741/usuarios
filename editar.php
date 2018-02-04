@@ -14,7 +14,12 @@
         senha = '$senha' 
         where id = '$id';");
         if($query) {
-            header("Location: listaUsuarios.php");
+            ?>
+            <script> 
+                alert('Usuário editado com sucesso!'); 
+                window.location.replace("listaUsuarios.php");
+            </script>
+           <?php
         } else {
             die("ERRO: ".mysqli_error($link));
         }
