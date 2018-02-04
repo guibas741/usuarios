@@ -42,7 +42,7 @@
                 </form>
             </p>
             <form action="novoUsuario.php">
-            <button type="submit" name="entrar" id="entrar" class="btn btn-primary">Adicionar</button>
+                <button type="submit" name="entrar" id="entrar" class="btn btn-primary">Adicionar</button>
             </form>
 
             <table class="table">
