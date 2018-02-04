@@ -36,7 +36,7 @@
                 <td>Sobrenome</td>
                 <td>Email</td>
                 <td>Login</td>
-                <td>Ação</td>
+                <td>Ações</td>
             </tr>
             <?php 
                 if($total) { 
@@ -51,7 +51,8 @@
                 <td><a href="<?php echo "editarUsuario.php?id=".$linha['id']."&nome=".$linha['nome'].
                 "&sobrenome=".$linha['sobrenome']."&email=".$linha['email']."&login=".$linha['login']."
                 &senha=".$linha['senha'] ?>">
-                    Editar</a></td>
+                    Editar</a>
+                <a href="<?php echo "excluir.php?id=".$linha['id'] ?>">Excluir</a></td>
             </tr>
 
             <?php
