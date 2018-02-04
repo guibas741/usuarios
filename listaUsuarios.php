@@ -7,7 +7,11 @@
             $mysqlLink = mysql_connect("localhost", "root", "");
             mysql_select_db("db_php");
 
-            $dados = mysql_query("Select * from usuarios");
+            if($parametro) {
+                $dados = mysql_query("select * from usuarios where nome like '$parametro%'");
+            } else {
+                $dados = mysql_query("Select * from usuarios");
+            }
             
             $linha = mysql_fetch_assoc($dados);
             $total = mysql_num_rows($dados);
@@ -16,6 +20,12 @@
     <body>
         <div id="conteudo">
             <h1>Lista de Usuários</h1>
+            <p>
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>">
+                    <input type="text" name="parametro"/>
+                    <input type="submit" value="buscar"/>
+                </form>
+            </p>
             <table border="1px">
             <tr>
                 <td>ID</td>
