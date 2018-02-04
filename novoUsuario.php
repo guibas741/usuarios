@@ -20,15 +20,45 @@
             </li>
         </ul>
         <h1>Novo Usuário</h1>
-        <div id="conteudo" class="form-group row">>
+        <div id="conteudo">
             <p>
                 <form action="salvar.php" >
-                    Nome: <input type="text" name="nome"/><br> <br>
-                    Sobrenome: <input type="text" name="sobrenome"/><br> <br>
-                    Email: <input type="text" name="email"/><br> <br>
-                    Login: <input type="text" name="login"/><br> <br>
-                    Senha: <input type="password" name="senha"/> <br> <br>
-                    <input type="submit" value="Adicionar"/>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nome">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Sobrenome</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="sobrenome">
+                    </div>
+           
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="email">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="login">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
+                        </div>
+                        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="senha">
+                    </div>
+           
+                    <button type="submit" name="Adicionar" id="Adicionar" class="btn btn-primary">Adicionar</button>
                 </form>
             </p>
         </div>
