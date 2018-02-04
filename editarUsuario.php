@@ -2,6 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Editar Usuário</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <?php 
             $id = filter_input(INPUT_GET, "id");
             $nome = filter_input(INPUT_GET, "nome");
@@ -12,17 +13,62 @@
         ?>
     </head>
     <body>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="menu.php">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="listaUsuarios.php">Lista de usuários</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="novoUsuario.php">Adicionar usuário</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+        </ul>
         <div id="conteudo">
             <h1>Editar Usuário</h1>
             <p>
                 <form action="editar.php">
                     <input type="hidden" name="id" value="<?php echo $id?>"/>
-                    Nome: <input type="text" name="nome" value="<?php echo $nome ?>" /><br> <br>
-                    Sobrenome: <input type="text" name="sobrenome" value="<?php echo $sobrenome ?>"/><br> <br>
-                    Email: <input type="text" name="email" value="<?php echo $email ?>"/><br> <br>
-                    Login: <input type="text" name="login" value="<?php echo $login ?>"/><br> <br>
-                    Senha: <input type="password" name="senha" value="<?php echo $senha ?>"/> <br> <br>
-                    <input type="submit" value="Salvar"/>
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="nome" value="<?php echo $nome ?>">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Sobrenome</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="sobrenome" value="<?php echo $sobrenome ?>">
+                    </div>
+                   
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="email" value="<?php echo $email ?>">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="login" value="<?php echo $login ?>">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
+                        </div>
+                        <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="senha" value="<?php echo $senha ?>">
+                    </div>
+                   
+                    <button type="submit" name="Salvar" id="Salvar" class="btn btn-primary">Salvar</button>
                 </form>
             </p>
         </div>
