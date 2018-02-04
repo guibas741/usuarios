@@ -16,6 +16,9 @@
                 <a class="nav-link active" href="novoUsuario.php">Adicionar usuário</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="buscaUsuario.php">Pesquisar Usuário</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
             </li>
         </ul>

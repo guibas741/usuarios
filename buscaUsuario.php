@@ -6,11 +6,15 @@
         <?php
             $parametro = filter_input(INPUT_GET, "parametro");
             $link = mysqli_connect("localhost", "root", "", "db_php");
-        
-            $dados = mysqli_query($link, "Select * from usuarios;");
+           
+
+            if($parametro) {
+                $dados = mysqli_query($link, "select * from usuarios where nome like '$parametro%';");
+                $linha = mysqli_fetch_assoc($dados);
+                $total = mysqli_num_rows($dados);
+            }
             
-            $linha = mysqli_fetch_assoc($dados);
-            $total = mysqli_num_rows($dados);
+            
         ?>
     <head>
     <body>
@@ -19,13 +23,13 @@
                 <a class="nav-link" href="menu.php">Menu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="listaUsuarios.php">Lista de usuários</a>
+                <a class="nav-link" href="listaUsuarios.php">Lista de usuários</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="novoUsuario.php">Adicionar usuário</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="buscaUsuario.php">Pesquisar Usuário</a>
+                <a class="nav-link active" href="buscaUsuario.php">Pesquisar Usuário</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.php">Logout</a>
@@ -33,11 +37,15 @@
         </ul>
         <div id="conteudo">
             <h1>Lista de Usuários</h1>
- 
+            <p>
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>">
+                    <input type="text" name="parametro"/>
+                    <input type="submit" value="buscar"/>
+                </form>
+            </p>
             <form action="novoUsuario.php">
                 <button type="submit" name="entrar" id="entrar" class="btn btn-primary">Adicionar</button>
             </form>
-
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -50,8 +58,9 @@
                     </tr>
                 </thead>
             <?php 
-                if($total) { 
-                    do {
+                if($parametro) {
+                    if($total) { 
+                     do {
             ?>
             <tbody>
                 <tr> 
@@ -70,12 +79,13 @@
             </tbody>
 
             <?php
-                    } while($linha = mysqli_fetch_assoc($dados));
+                        } while($linha = mysqli_fetch_assoc($dados));
 
-                    mysqli_free_result($dados);
+                        mysqli_free_result($dados);
 
+                    }
+                    mysqli_close($link);
                 }
-                mysqli_close($link);
             ?>
             </table>
         </div>
