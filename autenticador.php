@@ -13,7 +13,7 @@
             setcookie("login",$login);
             //session_register("myusername");
             //$_SESSION['login_user'] = $myusername;
-            header("Location:menu.php");
+            header("Location:home.php");
         }
     }
 ?>

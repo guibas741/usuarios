@@ -20,7 +20,7 @@
     <body>
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" href="menu.php">Menu</a>
+                <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="listaUsuarios.php">Lista de usuários</a>
