@@ -8,9 +8,9 @@
             mysql_select_db("db_php");
 
             if($parametro) {
-                $dados = mysql_query("select * from usuarios where nome like '$parametro%'");
+                $dados = mysql_query("select * from usuarios where nome like '$parametro%';");
             } else {
-                $dados = mysql_query("Select * from usuarios");
+                $dados = mysql_query("Select * from usuarios;");
             }
             
             $linha = mysql_fetch_assoc($dados);
@@ -25,6 +25,9 @@
                     <input type="text" name="parametro"/>
                     <input type="submit" value="buscar"/>
                 </form>
+            </p>
+            <p>
+                <a href="novoUsuario.php">Novo Usuário</a>
             </p>
             <table border="1px">
             <tr>
