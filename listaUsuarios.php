@@ -44,31 +44,37 @@
             <form action="novoUsuario.php">
             <button type="submit" name="entrar" id="entrar" class="btn btn-primary">Adicionar</button>
             </form>
-            <table border="1px">
-            <tr>
-                <td>ID</td>
-                <td>Nome</td>
-                <td>Sobrenome</td>
-                <td>Email</td>
-                <td>Login</td>
-                <td>Ações</td>
-            </tr>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Sobrenome</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Login</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
             <?php 
                 if($total) { 
                     do {
             ?>
-            <tr>
-                <td><?php echo $linha['id']?></td>
-                <td><?php echo $linha['nome']?></td>
-                <td><?php echo $linha['sobrenome']?></td>
-                <td><?php echo $linha['email']?></td>
-                <td><?php echo $linha['login']?></td>
-                <td><a href="<?php echo "editarUsuario.php?id=".$linha['id']."&nome=".$linha['nome'].
-                "&sobrenome=".$linha['sobrenome']."&email=".$linha['email']."&login=".$linha['login']."
-                &senha=".$linha['senha'] ?>">
-                    Editar</a>
-                <a href="<?php echo "excluir.php?id=".$linha['id'] ?>">Excluir</a></td>
-            </tr>
+            <tbody>
+                <tr> 
+                    <td scope="row"><?php echo $linha['id']?></td>
+                    <td><?php echo $linha['nome']?></td>
+                    <td><?php echo $linha['sobrenome']?></td>
+                    <td><?php echo $linha['email']?></td>
+                    <td><?php echo $linha['login']?></td>
+                    <td><a href="<?php echo "editarUsuario.php?id=".$linha['id']."&nome=".$linha['nome'].
+                    "&sobrenome=".$linha['sobrenome']."&email=".$linha['email']."&login=".$linha['login']."
+                    &senha=".$linha['senha'] ?>">
+                        Editar</a>
+                    <a href="<?php echo "excluir.php?id=".$linha['id'] ?>">Excluir</a></td>
+
+                </tr>
+            </tbody>
 
             <?php
                     } while($linha = mysqli_fetch_assoc($dados));
