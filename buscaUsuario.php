@@ -23,10 +23,10 @@
                 <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="listaUsuarios.php">Lista de usuários</a>
+                <a class="nav-link" href="listaUsuarios.php">Lista de Usuários</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="novoUsuario.php">Adicionar usuário</a>
+                <a class="nav-link" href="novoUsuario.php">Adicionar Usuário</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="buscaUsuario.php">Pesquisar Usuário</a>
