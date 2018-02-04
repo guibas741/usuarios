@@ -6,7 +6,13 @@
     if($link) {
         $query = mysqli_query($link, "delete from usuarios where id = '$id';");
         if($query) {
-            header("Location: listaUsuarios.php");
+            ?>
+            <script> 
+                alert('Usuário deletado com sucesso!'); 
+                window.location.replace("listaUsuarios.php");
+            </script>
+           <?php
+            
         } else {
             die("ERRO: ".mysqli_error($link));
         }

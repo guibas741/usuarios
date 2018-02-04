@@ -2,6 +2,7 @@
     <head>
         <title>Lista de Usuários</title>
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/bootstrap.min.js" rel="stylesheet" media="screen">
         <meta charset="UTF-8">
         <?php
             $parametro = filter_input(INPUT_GET, "parametro");
@@ -64,8 +65,8 @@
                     "&sobrenome=".$linha['sobrenome']."&email=".$linha['email']."&login=".$linha['login']."
                     &senha=".$linha['senha'] ?>">
                         Editar</a>
-                    <a href="<?php echo "excluir.php?id=".$linha['id'] ?>">Excluir</a></td>
-
+                    <a href="<?php echo "excluir.php?id=".$linha['id'] ?>" onclick="return confirm('Tem certeza que deseja deletar?')">Excluir</a></td>
+                  
                 </tr>
             </tbody>
 
