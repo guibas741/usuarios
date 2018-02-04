@@ -39,8 +39,13 @@
             <h1>Lista de Usuários</h1>
             <p>
                 <form action="<?php echo $_SERVER['PHP_SELF'];?>">
-                    <input type="text" name="parametro"/>
-                    <input type="submit" value="buscar"/>
+                    <div class="input-group mb-3 col-lg-5" >
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="parametro">
+                        <button type="submit" name="pesquisar" id="pesquisar" class="btn btn-primary">Pesquisar</button>
+                    </div>
                 </form>
             </p>
             <form action="novoUsuario.php">
