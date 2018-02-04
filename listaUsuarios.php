@@ -4,17 +4,17 @@
         <meta charset="UTF-8">
         <?php
             $parametro = filter_input(INPUT_GET, "parametro");
-            $mysqlLink = mysql_connect("localhost", "root", "");
-            mysql_select_db("db_php");
+            $link = mysqli_connect("localhost", "root", "", "db_php");
+           
 
             if($parametro) {
-                $dados = mysql_query("select * from usuarios where nome like '$parametro%';");
+                $dados = mysqli_query($link, "select * from usuarios where nome like '$parametro%';");
             } else {
-                $dados = mysql_query("Select * from usuarios;");
+                $dados = mysqli_query($link, "Select * from usuarios;");
             }
             
-            $linha = mysql_fetch_assoc($dados);
-            $total = mysql_num_rows($dados);
+            $linha = mysqli_fetch_assoc($dados);
+            $total = mysqli_num_rows($dados);
         ?>
     <head>
     <body>
@@ -56,12 +56,12 @@
             </tr>
 
             <?php
-                    } while($linha = mysql_fetch_assoc($dados));
+                    } while($linha = mysqli_fetch_assoc($dados));
 
-                    mysql_free_result($dados);
+                    mysqli_free_result($dados);
 
                 }
-                mysql_close($mysqlLink);
+                mysqli_close($link);
             ?>
             </table>
         </div>
