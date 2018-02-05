@@ -6,9 +6,9 @@
         <meta charset="UTF-8">
         <?php
             $parametro = filter_input(INPUT_GET, "parametro");
-            $link = mysqli_connect("localhost", "root", "", "db_php");
+            include 'configDb.php';
         
-            $dados = mysqli_query($link, "Select * from usuarios;");
+            $dados = mysqli_query($connection, "Select * from usuarios;");
             
             $linha = mysqli_fetch_assoc($dados);
             $total = mysqli_num_rows($dados);
@@ -76,7 +76,7 @@
                     mysqli_free_result($dados);
 
                 }
-                mysqli_close($link);
+                mysqli_close($connection);
             ?>
             </table>
         </div>
