@@ -32,7 +32,7 @@
                 <a class="nav-link active" href="buscaUsuario.php">Pesquisar Usuário</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php">Logout</a>
+                <a class="nav-link"  onclick="return confirm('Tem certeza que deseja sair?')" href="logout.php">Logout</a>
             </li>
         </ul>
         <div id="conteudo">
