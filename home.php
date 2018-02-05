@@ -26,8 +26,14 @@
         <h1>
           <?php
             $login_cookie = $_COOKIE['login'];
+            include 'configDB.php';
+           
+            $query = mysqli_query($connection, "Select * from usuarios where login = '$login_cookie';");
+            $linha = mysqli_fetch_assoc($query);
+            $nome = $linha['nome'];
               if(isset($login_cookie)){
-                echo"Bem-Vindo, $login_cookie <br>";
+               
+                echo "<h1>Bem-Vindo, $nome </h1>";
               }
           ?>
         </h1>
