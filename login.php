@@ -13,8 +13,7 @@
             <form method="post" action="autenticador.php" name="loginForm">
                 <div class="form-group col-lg-5">
                     <label for="exampleInputEmail1">Usuário</label>
-                    <input type="text" class="form-control" id="login" name="login" size="35" aria-describedby="emailHelp" placeholder="Enter login">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+                    <input type="text" class="form-control" id="login" name="login" size="35" placeholder="Enter login">
                 </div>
                 <div class="form-group col-lg-5">
                     <label for="exampleInputPassword1">Senha</label>
