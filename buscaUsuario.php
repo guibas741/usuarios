@@ -5,11 +5,11 @@
         <meta charset="UTF-8">
         <?php
             $parametro = filter_input(INPUT_GET, "parametro");
-            $link = mysqli_connect("localhost", "root", "", "db_php");
+            include 'configDb.php';
            
 
             if($parametro) {
-                $dados = mysqli_query($link, "select * from usuarios where nome like '$parametro%';");
+                $dados = mysqli_query($connection, "select * from usuarios where nome like '$parametro%';");
                 $linha = mysqli_fetch_assoc($dados);
                 $total = mysqli_num_rows($dados);
             }
@@ -88,8 +88,14 @@
 
                         mysqli_free_result($dados);
 
+                    } else {
+                        ?>
+                        <script>
+                            alert('Nenhum registro foi encontrado!'); 
+                        </script>
+                        <?php
                     }
-                    mysqli_close($link);
+                    mysqli_close($connection);
                 }
             ?>
             </table>
