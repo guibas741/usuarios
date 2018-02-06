@@ -22,6 +22,9 @@
                 <div class="form-group col-lg-5">
                     <button type="submit" name="entrar" id="entrar" class="btn btn-primary">Entrar</button>
                 </div>
+                <div class="form-group col lg-5">
+                    <a href="cadastro.php">Cadastre-se</a>
+                </div>
             </form>
         </div>
     </body>
