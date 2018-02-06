@@ -1,3 +1,4 @@
+<?php include 'checkSession.php' ?>
 <html>
     <head>
         <title>Lista de Usuários</title>

@@ -3,7 +3,7 @@
   $entrar = $_POST['entrar'];
   $senha = ($_POST['senha']);
   $connect = mysqli_connect('localhost','root','', 'db_php');
- // session_start();
+  session_start();
     if (isset($entrar)) {
       $verifica = mysqli_query($connect, "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'") or die("erro ao selecionar");
         if (mysqli_num_rows($verifica)<=0){
@@ -12,7 +12,7 @@
         }else{
             setcookie("login",$login);
             //session_register("myusername");
-            //$_SESSION['login_user'] = $myusername;
+            $_SESSION['login'] = $login;
             header("Location:home.php");
         }
     }

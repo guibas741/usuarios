@@ -1,3 +1,4 @@
+<?php include 'checkSession.php' ?>
 <html>
     <head>
         <meta charset="UTF-8">

@@ -1,3 +1,4 @@
+<?php include 'checkSession.php' ?>
 <html>
     <head>
         <title>Lista de Usuários</title>
@@ -7,7 +8,7 @@
         <?php
             $parametro = filter_input(INPUT_GET, "parametro");
             include 'configDb.php';
-        
+           
             $dados = mysqli_query($connection, "Select * from usuarios;");
             
             $linha = mysqli_fetch_assoc($dados);

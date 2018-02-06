@@ -1,3 +1,4 @@
+<?php include 'checkSession.php' ?>
 <html>
     <head>
       <title>MENU</title>
@@ -24,7 +25,7 @@
       </ul>
       <div>
         <h1>
-          <?php
+          <?php  
             $login_cookie = $_COOKIE['login'];
             include 'configDB.php';
            
@@ -33,7 +34,7 @@
             $nome = $linha['nome'];
               if(isset($login_cookie)){
                
-                echo "<h1>Bem-Vindo, $nome </h1>";
+                echo "<h1>Bem-Vindo, $nome {$linha['sobrenome']}</h1>";
               }
           ?>
         </h1>
