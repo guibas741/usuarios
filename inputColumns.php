@@ -5,4 +5,5 @@
     $email = filter_input(INPUT_GET, "email");
     $login = filter_input(INPUT_GET, "login");
     $senha = filter_input(INPUT_GET, "senha");
+    $administrador = filter_input(INPUT_GET, "administrador");
 ?>

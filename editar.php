@@ -9,7 +9,8 @@
             sobrenome = '$sobrenome', 
             email     = '$email', 
             login     = '$login', 
-            senha     = '$senha' 
+            senha     = '$senha',
+            administrador = '$administrador'
             where id = '$id';");
         if($query) {
             ?>

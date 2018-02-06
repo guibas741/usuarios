@@ -61,6 +61,16 @@
                         </div>
                         <input type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="senha">
                     </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Permissão do usuário</label>
+                        </div>
+                        <select class="custom-select" id="administrador" name="administrador">
+                            <option selected>Escolha...</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="usuario">Usuário</option>
+                        </select>
+                    </div>
            
                     <button type="submit" name="Adicionar" id="Adicionar" class="btn btn-primary">Adicionar</button>
                 </form>
