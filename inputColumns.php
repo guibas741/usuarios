@@ -6,4 +6,6 @@
     $login = filter_input(INPUT_GET, "login");
     $senha = filter_input(INPUT_GET, "senha");
     $administrador = filter_input(INPUT_GET, "administrador");
+
+    if(empty($administrador)) $administrador = "usuario";
 ?>
