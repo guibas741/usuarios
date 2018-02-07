@@ -48,6 +48,7 @@
                         <th scope="col">Sobrenome</th>
                         <th scope="col">Email</th>
                         <th scope="col">Login</th>
+                        <th scope="col">Permissão</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -62,6 +63,7 @@
                     <td><?php echo $linha['sobrenome']?></td>
                     <td><?php echo $linha['email']?></td>
                     <td><?php echo $linha['login']?></td>
+                    <td><?php echo $linha['permissao']?></td>
                     <td><a href="<?php echo "editarUsuario.php?id=".$linha['id']."&nome=".$linha['nome'].
                     "&sobrenome=".$linha['sobrenome']."&email=".$linha['email']."&login=".$linha['login']."
                     &senha=".$linha['senha'] ?>">

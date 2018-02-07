@@ -3,7 +3,7 @@
     include 'configDb.php';
 
     if($connection) {
-        $query = mysqli_query($connection, "insert into usuarios(nome, sobrenome, email, login, senha, administrador) values('$nome', '$sobrenome', '$email', '$login', '$senha', '$administrador');");
+        $query = mysqli_query($connection, "insert into usuarios(nome, sobrenome, email, login, senha, permissao) values('$nome', '$sobrenome', '$email', '$login', '$senha', '$administrador');");
         if($query) {
             ?>
             <script> 
